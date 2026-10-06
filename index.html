@@ -6,13 +6,66 @@
     <title>Job Application Tracker</title>
 </head>
 <body>
-    <h1>Job Application Tracker</h1>
-    <div class = "dashboard">
-        <div> <b id = "count-total">0</b> <span> Total</span> </div>
-        <div> <b id = "count-applied">0</b> <span> Applied</span> </div>
-        <div> <b id = "count-interview">0</b> <span> Interviews</span> </div>
-        <div> <b id = "count-rejection">0</b> <span> Rejected</span> </div>
-        <div> <b id = "count-offer">0</b> <span> Offers</span></div>
-    </div>
+    <header>
+        <h1>Job Application Tracker</h1>
+        <div class = "dashboard">
+            <div> <b id="count-total">0</b> <span> Total</span> </div>
+            <div> <b id="count-applied">0</b> <span> Applied</span> </div>
+            <div> <b id="count-interview">0</b> <span> Interviews</span> </div>
+            <div> <b id="count-rejection">0</b> <span> Rejected</span> </div>
+            <div> <b id="count-offer">0</b> <span> Offers</span></div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Add an application</h2>
+            <form>
+                <label>Company
+                    <input type="text" id="company" required>
+                </label>
+                <label>Position
+                    <input type="text" id="position" required>
+                </label>
+                <label>Status
+                    <select id="status">
+                        <option value="">Please make a selection</option>
+                        <option value="applied">Applied</option>
+                        <option value="interview">Interview</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="offer">Offer</option>
+                    </select>
+                </label>
+                <label>Date Applied
+                    <input type="date" id="dateApplied" required>
+                </label>
+                <label>Notes
+                    <textarea id="notes" rows="5"></textarea>
+                </label>
+                <button type="submit">Add application</button>
+            </form>
+        </section>
+
+        <section>
+            <div class="filters">
+                <label>Search by company
+                    <input type="search" id="search" placeholder="Type to filter...">
+                </label>
+                <label>Status
+                    <select id="filter-status">
+                        <option value="all">All</option>
+                        <option>Applied</option>
+                        <option>Interview</option>
+                        <option>Rejected</option>
+                        <option>Offer</option>
+                    </select>
+                </label>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy;Job Application Tracker </p>
+    </footer>
 </body>
 </html>
