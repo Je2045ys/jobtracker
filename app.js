@@ -1,18 +1,23 @@
 const statuses = ["Applied", "Interview", "Offer", "Rejected"]
 
-const applications = []
-const currentFilter = "All"
+let applications = []
+let currentFilter = "All"
 const searchTerm = ""
 
 
 const search = document.getElementById("search")
 const container = document.getElementById("applications")
 const filterStatus = document.getElementById("filter-status")
+const addForm = document.getElementById("add-form")
 
 function createApplicationCard({application, onStatusChange, onDelete}) {
     // card and badge after
     const card = document.createElement("div")
     card.className = "card"
+
+    const badge = document.createElement("span")
+    badge.className = `badge badge-${application.status.toLowerCase()}`
+    badge.textContent = application.status
 
     const title = document.createElement("h3")
     title.textContent = application.company
@@ -116,3 +121,33 @@ function renderApps() {
         )
     })
 }
+
+addForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const newApplication = {
+        id:Date.now(),
+        company: document.getElementById("company").value.trim(),
+        position: document.getElementById("position").value.trim(),
+        status: document.getElementById("status").value,
+        notes: document.getElementById("notes").value.trim(),
+        dateApplied: document.getElementById("dateApplied").value
+    }
+
+    applications.push(newApplication)
+
+    addForm.reset()
+    renderApps()
+})
+
+search.addEventListener("input", (e) => {
+    searchTerm = e.target.value.toLowerCase()
+    renderApps()
+})
+
+filterStatus.addEventListener("change", (e) => {
+    currentFilter = e.target.value
+    renderApps()
+})
+
+renderApps()
