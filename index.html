@@ -66,6 +66,30 @@
 
             <div id="applications" class="grid"></div>
         </section>
+
+        <section>
+            <h2>Contact us</h2>
+            <form id="contact-form" novalidate>
+                <label>First name
+                    <input type="text" id="first-name" required>
+                    <span class="error" id="error-first-name"></span>
+                </label>
+                <label>Last name
+                    <input type="text" id="last-name" required>
+                    <span class="error" id="error-last-name"></span>
+                </label>
+                <label>Email
+                    <input type="text" id="email" required>
+                    <span class="error" id="error-email"></span>
+                </label>
+                <label>Message
+                    <textarea id="message" rows="5"></textarea>
+                    <span class="error" id="error-message"></span>
+                </label>
+                <button type="submit">Send enquiry</button>
+                <p id="contact-success" hidden></p>
+            </form>
+        </section>
     </main>
     
     <footer>
