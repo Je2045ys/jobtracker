@@ -142,6 +142,9 @@ addForm.addEventListener("submit", (e) => {
     applications.push(newApplication)
     saveApplications(applications)
 
+    search.value = ""
+    searchTerm = ""
+
     addForm.reset()
     renderApps()
 })
@@ -196,11 +199,11 @@ contactForm.addEventListener("submit", (e) => {
     document.getElementById("error-last-name").textContent = ""
     document.getElementById("error-message").textContent = ""
     document.getElementById("error-email").textContent = ""
-    const msg = document.getElementById("contact-success")
-    msg.textContent = "Your enquiry has been saved. Thank you!"
+    const successfulMessage = document.getElementById("contact-success")
+    successfulMessage.textContent = "Your enquiry has been saved. Thank you!"
 
     setTimeout(() => {
-        msg.remove()
+        successfulMessage.remove()
     }, 3000)
 
     let valid = true
