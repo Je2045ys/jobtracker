@@ -20,6 +20,12 @@
             <div class="num-offer"> <b id="count-offer">0</b> <span> Offers</span></div>
             <div class="num-rejection"> <b id="count-rejection">0</b> <span> Rejected</span> </div>
         </div>
+        
+        <nav>
+            <a href="index.html" class="active">Tracker</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
     </header>
 
     <main>
@@ -71,28 +77,18 @@
         </section>
 
         <section>
-            <h2>Contact us</h2>
-            <form id="contact-form" novalidate>
-                <label>First name
-                    <input type="text" id="first-name" required>
-                    <span class="error" id="error-first-name"></span>
+            <h2>Find jobs</h2>
+            <form id="jobs-form" class="filters">
+                <label>Keyword
+                    <input type="search" id="jobs-search" placeholder="e.g. developer">
                 </label>
-                <label>Last name
-                    <input type="text" id="last-name" required>
-                    <span class="error" id="error-last-name"></span>
-                </label>
-                <label>Email
-                    <input type="text" id="email" required>
-                    <span class="error" id="error-email"></span>
-                </label>
-                <label>Message
-                    <textarea id="message" rows="5"></textarea>
-                    <span class="error" id="error-message"></span>
-                </label>
-                <button type="submit">Send enquiry</button>
-                <p id="contact-success" hidden></p>
+                <button type="submit">Search jobs</button>
             </form>
+            <p id="jobs-status" role="status"></p>
+            <ul id="jobs-results"></ul>
         </section>
+
+        
     </main>
     
     <footer>
